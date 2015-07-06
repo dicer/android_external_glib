@@ -30,6 +30,7 @@
 #include "config.h"
 
 
+#define G_BIT_LOCK_FORCE_FUTEX_EMULATION
 #ifdef G_BIT_LOCK_FORCE_FUTEX_EMULATION
 #undef HAVE_FUTEX
 #endif
@@ -55,8 +56,9 @@ _g_futex_thread_init (void) {
  *
  * If anyone actually gets bit by this, please file a bug. :)
  */
+#define __user
 #include <linux/futex.h>
-#include <syscall.h>
+#include <sys/syscall.h>
 #include <unistd.h>
 
 /* < private >

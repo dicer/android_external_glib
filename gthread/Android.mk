@@ -24,6 +24,6 @@ ifeq ($(GLIB_BUILD_STATIC),true)
 include $(BUILD_STATIC_LIBRARY)
 else
 LOCAL_SHARED_LIBRARIES := libglib-2.0
-
+LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
 endif

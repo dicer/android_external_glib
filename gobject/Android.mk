@@ -44,6 +44,6 @@ LOCAL_STATIC_LIBRARIES := libglib-2.0 libgthread-2.0
 include $(BUILD_STATIC_LIBRARY)
 else
 LOCAL_SHARED_LIBRARIES := libglib-2.0 libgthread-2.0
-
+LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
 endif
